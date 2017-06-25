@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>angular 1.x checkbox demo</title>
+    <link rel="stylesheet" href="">
+    <script src="../js/angular.min.js"></script>
+</head>
+
+<body ng-app="angularOne">
+    <div ng-controller="controllerOne">
+        <select name="" id="" ng-model="user.sex">
+            <option value="">--please choose the sex--</option>
+            <option ng-value="1" ng-selected="user.sex==1">man</option>
+            <option ng-value="2" ng-selected="user.sex==2">women</option>
+        </select>
+        <input type="radio" name="" id="" ng-model="user.sex" ng-value="1">man
+        <input type="radio" name="" id="" ng-model="user.sex" ng-value="2">women
+        <br/>
+        <input type="text" name="" id="">
+    </div>
+    <script>
+    var angularOne = angular.module("angularOne", []);
+    angularOne.controller("controllerOne", ['$scope', function($scope) {
+        $scope.data = [{
+            "name": "sina",
+            "url": "sina.com"
+        }, {
+            "name": "baidu",
+            "url": "baidu.com"
+        }];
+
+        $scope.city = ["shenzhen", "shanghai", "guangzhou", "beijing"];
+
+        $scope.user = {
+            sex: 1
+        };
+    }]);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>angular 1.x checkbox demo</title>
+    <link rel="stylesheet" href="">
+    <script src="../js/angular.min.js"></script>
+    <style>
+    .red {
+        background-color: red;
+    }
+    
+    .green {
+        background-color: green;
+    }
+    
+    .font {
+        font-size: 30;
+    }
+    
+    .lock {
+        background-color: #dcdcdc;
+    }
+    </style>
+</head>
+
+<body ng-app="angularOne">
+    <h1>All check demo</h1>
+    <div ng-controller="controllerOne">
+        <table border="1" width="600">
+            <tr>
+                <td>
+                    <input type='checkbox' ng-model="all"></input><span ng-bind="all?'Uncheck':'check'"></span></td>
+                <td>name</td>
+                <td>url</td>
+            </tr>
+            <tr ng-repeat="v in users" ng-class="{red:true,font:true}">
+                <td>
+                    <input type="checkbox" name="" id="" ng-checked="all"> {{$index}}
+                </td>
+                <td>{{v.name}}</td>
+                <td>{{v.url}}</td>
+            </tr>
+        </table>
+        <h1>ng-class test</h1>
+        <table border="1" width="600">
+            <tr>
+                <td>
+                    <input type='checkbox' ng-model="all"></input><span ng-bind="all?'Uncheck':'check'"></span></td>
+                <td>name</td>
+                <td>url</td>
+            </tr>
+            <tr ng-repeat="v in users" ng-class="{lock:v.status==1,font:true}">
+                <td>
+                    <input type="checkbox" name="" id="" ng-checked="all"> {{$index}}
+                </td>
+                <td>{{v.name}}</td>
+                <td>{{v.url}}</td>
+            </tr>
+        </table>
+        <h1>ng-class-odd && ng-class-even test</h1>
+        <table border="1" width="600">
+            <tr>
+                <td>
+                    <input type='checkbox' ng-model="all"></input><span ng-bind="all?'Uncheck':'check'"></span></td>
+                <td>name</td>
+                <td>url</td>
+            </tr>
+            <tr ng-repeat="v in users" ng-class-odd="{red:true,font:true}" ng-class-even="{green:true,font:true}">
+                <td>
+                    <input type="checkbox" name="" id="" ng-checked="all"> {{$index}}
+                </td>
+                <td>{{v.name}}</td>
+                <td>{{v.url}}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+    var angularOne = angular.module("angularOne", []);
+    angularOne.controller("controllerOne", ['$scope', function($scope) {
+
+        $scope.users = [{
+            name: "Jerry",
+            url: "Jerry@morningstar.com",
+            status: 1
+        }, {
+            name: "Frank",
+            url: "Frank@morningstar.com",
+            status: 0
+        }, {
+            name: "Kevin",
+            url: "Kevin@morningstar.com",
+            status: 1
+        }, {
+            name: "Kevin",
+            url: "Kevin@morningstar.com",
+            status: 0
+        }, {
+            name: "Kevin",
+            url: "Kevin@morningstar.com",
+            status: 1
+        }, {
+            name: "Kevin",
+            url: "Kevin@morningstar.com",
+            status: 0
+        }];
+    }]);
+    </script>
+</body>
+
+</html>

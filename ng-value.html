@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <script src="./js/angular.min.js"></script>
+</head>
+
+<body ng-app="angularTwo">
+    <div ng-controller="controllerTwo">
+        <input type="text" name="" id="" ng-model="goods.data.title">
+        <input type="text" name="" id="" ng-model="goods.data.price">
+        <input type="text" name="" id="" ng-model="goods.data.num">
+        </br>
+        Total Price :
+        <input type="text" name="" id="" ng-value="goods.data.num*goods.data.price">
+        </br>
+    </div>
+    <script>
+    //------------Methods Two---------------------
+    var angularTwo = angular.module("angularTwo", []);
+    angularTwo.controller("controllerTwo", ['$scope', function($scope) {
+        $scope.goods = {
+            data: {
+                'title': 'apple mac',
+                'price': '300',
+                'num': '6'
+            },
+            add: function() {
+                $scope.goods.num++;
+            },
+            reduce: function() {
+                $scope.goods.num--;
+            }
+        }
+    }]);
+    </script>
+</body>
+
+</html>

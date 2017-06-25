@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>angular 1.x checkbox demo</title>
+    <link rel="stylesheet" href="">
+    <script src="../js/angular.min.js"></script>
+</head>
+
+<body ng-app="angularOne">
+    <div ng-controller="controllerOne">
+        <select name="" id="" ng-options="item.name for item in data" ng-model="data"></select>
+        {{city}}
+        {{default}}
+    </div>
+    <script>
+    var angularOne = angular.module("angularOne", []);
+    angularOne.controller("controllerOne", ['$scope', function($scope) {
+        $scope.city = "beijing";
+        $scope.default = '2';
+        $scope.data = [{
+            name: "beijing",
+            value: 1
+        }, {
+            name: "shanghai",
+            value: 2
+        }, {
+            name: "shenzhen",
+            value: 3
+        }, ];
+
+    }]);
+    </script>
+</body>
+
+</html>

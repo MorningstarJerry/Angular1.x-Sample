@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>angular 1.x checkbox demo</title>
+    <link rel="stylesheet" href="">
+    <script src="../js/angular.min.js"></script>
+</head>
+
+<body ng-app="angularOne">
+    <h3>All check demo</h3>
+    <div ng-controller="controllerOne">
+        <table border="1" width="600">
+            <tr>
+                <td>
+                    <input type='checkbox' ng-model="all"></input><span ng-bind="all?'Uncheck':'check'"></span></td>
+                <td>name</td>
+                <td>url</td>
+            </tr>
+            <tr ng-repeat="v in users">
+                <td>
+                    <input type="checkbox" name="" id="" ng-checked="all">
+                </td>
+                <td>{{v.name}}</td>
+                <td>{{v.url}}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+    var angularOne = angular.module("angularOne", []);
+    angularOne.controller("controllerOne", ['$scope', function($scope) {
+
+        $scope.users = [{
+            name: "Jerry",
+            url: "Jerry@morningstar.com"
+        }, {
+            name: "Frank",
+            url: "Frank@morningstar.com"
+        }, {
+            name: "Kevin",
+            url: "Kevin@morningstar.com"
+        }];
+    }]);
+    </script>
+</body>
+
+</html>

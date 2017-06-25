@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>angular 1.x instructions demo</title>
+    <link rel="stylesheet" href="">
+    <script src="../js/angular.min.js"></script>
+</head>
+
+<body ng-app="angularOne">
+    <div ng-controller="controllerOne">
+        <input type="checkbox" name="" id="" ng-model="data.game" ng-true-value="1" ng-false-value="0">
+        <input type="checkbox" name="" id="" ng-model="data.video" ng-true-value="1" ng-false-value="0">
+        <div ng-show="data.game==1">
+            <h1>game</h1>
+            <textarea name="" id="" cols="30" rows="10">game</textarea>
+        </div>
+        <div ng-show="data.video==1">
+            <h1>video</h1>
+            <textarea name="" id="" cols="30" rows="10">vedio</textarea>
+        </div>
+        <div ng-hide="data.song==0">
+            <h1>song</h1>
+            <textarea name="" id="" cols="30" rows="10">vedio</textarea>
+        </div>
+        <div ng-if="data.ming==1">
+            <h1>ming</h1>
+            <textarea name="" id="" cols="30" rows="10">vedio</textarea>
+        </div>
+        <br/> {{status}}
+        <br/>
+        <lable>
+            <input type="checkbox" ng-model="status">protocal</lable>
+        <button ng-init="copyright=false" ng-click="copyright=!copyright">check copyright</button>
+        <br/>
+        <textarea name="" id="" cols="30" rows="10" ng-show="copyright">this is a copyright demo</textarea>
+        <br/>
+        <button ng-disabled="!status">login</button>
+    </div>
+    <script>
+    var angularOne = angular.module("angularOne", []);
+    angularOne.controller("controllerOne", ['$scope', function($scope) {
+        $scope.data = {
+            "game": 1,
+            "video": 1,
+            "song": 0,
+            "ming": 1
+        };
+    }]);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <script src="./js/angular.min.js"></script>
+</head>
+
+<body ng-app="angularOne">
+    <div ng-controller="controllerOne">
+        <input type="text" name="" id="" ng-model="name">
+         {{name}}
+    </div>
+
+    <script>
+    var angularOne = angular.module("angularOne", []);
+    angularOne.controller("controllerOne", ['$scope', function($scope) {
+        $scope.name = "My fist angular app";
+    }]);
+    </script>
+</body>
+
+</html>

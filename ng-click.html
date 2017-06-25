@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <script src="./js/angular.min.js"></script>
+</head>
+
+<body ng-app="angularTwo">
+    <div ng-controller="controllerTwo">
+        titles:{{goods.title}}
+        <br/> prices:{{goods.price}}
+        <br/> nums:{{goods.num}}
+        <br/> totals:{{goods.price*goods.num}}
+        <br/>
+        <button ng-click="add()">Add</button>
+        <button ng-click="reduce()">reduce</button>
+    </div>
+    <script>
+    //-------Methods one --------------------
+    // var angularTwo = angular.module("angularTwo", []);
+    // angularTwo.controller("controllerTwo", ['$scope', function($scope) {
+    //     $scope.goods = {{
+    //         'title': 'apple mac',
+    //         'price': '300',
+    //         'num': '6'
+    //     }};
+    //     $scope.add = function() {
+
+    //         $scope.goods.num++;
+    //     }
+
+    //     $scope.reduce = function() {
+    //         $scope.goods.num--;
+    //     }
+    // }]);
+
+    //------------Methods Two---------------------
+    var angularTwo = angular.module("angularTwo", []);
+    angularTwo.controller("controllerTwo", ['$scope', function($scope) {
+        $scope.goods = {
+            data: {
+                'title': 'apple mac',
+                'price': '300',
+                'num': '6'
+            },
+            add: function() {
+                $scope.goods.num++;
+            },
+            reduce: function() {
+                $scope.goods.num--;
+            }
+        }
+    }]);
+    </script>
+</body>
+
+</html>

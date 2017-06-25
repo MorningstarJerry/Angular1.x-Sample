@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>angular 1.x Common functions demo</title>
+    <link rel="stylesheet" href="">
+    <script src="../js/angular.min.js"></script>
+</head>
+
+<body ng-app="angularOne">
+    <div ng-controller="controllerOne">angular deep copy test</div>
+    <script>
+    var angularOne = angular.module("angularOne", []);
+    angularOne.controller("controllerOne", ['$scope', function($scope) {
+        var jsObj1 = {
+            name: "Jerry"
+        }
+        var jsObj2 = jsObj1;
+        jsObj2.name = "frank";
+
+        console.log("==============angular copy test==================");
+        console.log("jsObj1：" + jsObj1.name);
+        console.log("jsObj2：" + jsObj2.name);
+        var angularObj3 = {};
+        angular.copy(jsObj1, angularObj3);
+        angularObj3.name = "kasson";
+        console.log("angularObj3：" + angularObj3.name);
+
+        console.log("==============angular extend test==================");
+        var data = {
+            name: "Jerry"
+        };
+        angular.extend(data, {
+            url: 'www.baidu.com',
+            age: '30'
+        });
+        console.log("data.url:" + data.url);
+
+        console.log("==============angular foreach test==================");
+        var items = [{
+            name: "Jerry",
+            url: 'baidu.com'
+        }, {
+            name: "frank",
+            url: 'sina.com'
+        }];
+        angular.forEach(items, function(v, k) {
+            v.url = 'www' + v.url;
+            console.log(v);
+        });
+
+    }]);
+    </script>
+</body>
+
+</html>
